@@ -1,34 +1,27 @@
+import { Routes, Route, Navigate } from 'react-router-dom';
 import './App.css';
 import IconSidebar from './components/IconSidebar';
-import SideNav from './components/SideNav';
-import Header from './components/Header';
-import FilterBar from './components/FilterBar';
-import StatsCard from './components/StatsCard';
-import StatusChart from './components/StatusChart';
-import CreatorTable from './components/CreatorTable';
+import RetainerData from './pages/RetainerData';
+import AmbassadorAnalytics from './pages/AmbassadorAnalytics';
 
-function App() {
+function RetainerDataLayout() {
   return (
     <div className="app-layout">
       <div className="icon-sidebar-area">
         <IconSidebar />
       </div>
-
-      <div className="header-area">
-        <Header />
-      </div>
-
-      <div className="side-nav-area">
-        <SideNav />
-      </div>
-
-      <main className="main-content-area">
-        <FilterBar />
-        <StatsCard />
-        <StatusChart />
-        <CreatorTable />
-      </main>
+      <RetainerData />
     </div>
+  );
+}
+
+function App() {
+  return (
+    <Routes>
+      <Route path="/" element={<Navigate to="/retainer-data" replace />} />
+      <Route path="/retainer-data" element={<RetainerDataLayout />} />
+      <Route path="/ambassador/:id/analytics" element={<AmbassadorAnalytics />} />
+    </Routes>
   );
 }
 
