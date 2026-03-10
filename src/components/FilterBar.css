@@ -1,0 +1,77 @@
+.filter-bar {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.filter-bar__title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #1a1a1a;
+  white-space: nowrap;
+}
+
+.filter-bar__controls {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-left: auto;
+}
+
+.filter-bar__dropdown {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 12px;
+  border: 1px solid #d0d0d0;
+  border-radius: 6px;
+  font-size: 14px;
+  color: #5f6368;
+  background: #fff;
+  cursor: pointer;
+  height: 36px;
+}
+
+.filter-bar__dropdown--brands {
+  width: 250px;
+}
+
+.filter-bar__dropdown--manager {
+  width: 300px;
+}
+
+.filter-bar__dropdown .material-symbols-outlined {
+  font-size: 18px;
+  color: #9e9e9e;
+}
+
+.filter-bar__or {
+  font-size: 14px;
+  color: #5f6368;
+}
+
+.filter-bar__separator {
+  width: 1px;
+  height: 42px;
+  background: #e0e0e0;
+}
+
+.filter-bar__date-picker {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border: 1px solid #d0d0d0;
+  border-radius: 6px;
+  font-size: 14px;
+  color: #1a1a1a;
+  background: #fff;
+  cursor: pointer;
+  height: 36px;
+  white-space: nowrap;
+}
+
+.filter-bar__date-picker .material-symbols-outlined {
+  font-size: 20px;
+  color: #5f6368;
+}
