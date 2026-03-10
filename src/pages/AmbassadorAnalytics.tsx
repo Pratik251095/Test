@@ -1,6 +1,14 @@
 import { useState } from 'react';
+import { useParams } from 'react-router-dom';
 import IconSidebar from '../components/IconSidebar';
 import './AmbassadorAnalytics.css';
+
+function slugToName(slug: string) {
+  return slug
+    .split('-')
+    .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
+    .join(' ');
+}
 
 const tabs = ['Personal info', 'Analytics', 'Payments', 'Sales', 'Campaigns'];
 const subNavTabs = ['General data', 'Retainer data'];
@@ -28,6 +36,8 @@ const brands = [
 ];
 
 export default function AmbassadorAnalytics() {
+  const { id } = useParams<{ id: string }>();
+  const name = slugToName(id ?? 'unknown');
   const [activeTab] = useState('Analytics');
   const [activeSubNav, setActiveSubNav] = useState('Retainer data');
 
@@ -51,12 +61,12 @@ export default function AmbassadorAnalytics() {
             <span className="material-symbols-outlined amb-breadcrumb__arrow">
               chevron_right
             </span>
-            <span className="amb-breadcrumb__current">Dave Hill</span>
+            <span className="amb-breadcrumb__current">{name}</span>
           </nav>
 
           <div className="amb-profile__row">
             <div className="amb-profile__name-group">
-              <h1 className="amb-profile__name">Dave Hill</h1>
+              <h1 className="amb-profile__name">{name}</h1>
               <span className="amb-profile__badge">
                 <span className="material-symbols-outlined amb-profile__badge-icon">
                   check_circle

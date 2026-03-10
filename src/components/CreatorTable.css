@@ -74,6 +74,15 @@
   border-bottom: none;
 }
 
+.creator-table__row--clickable {
+  cursor: pointer;
+  transition: background-color 0.15s;
+}
+
+.creator-table__row--clickable:hover {
+  background-color: #f8f9fa;
+}
+
 .creator-table__name-cell {
   display: flex;
   align-items: center;

@@ -1,4 +1,9 @@
+import { useNavigate } from 'react-router-dom';
 import './CreatorTable.css';
+
+function toSlug(name: string) {
+  return name.toLowerCase().replace(/\s+/g, '-');
+}
 
 const creators = [
   {
@@ -52,6 +57,8 @@ const creators = [
 ];
 
 export default function CreatorTable() {
+  const navigate = useNavigate();
+
   return (
     <div className="creator-table">
       <div className="creator-table__search-bar">
@@ -77,7 +84,11 @@ export default function CreatorTable() {
         </thead>
         <tbody>
           {creators.map((creator, i) => (
-            <tr key={`${creator.name}-${i}`}>
+            <tr
+              key={`${creator.name}-${i}`}
+              className="creator-table__row--clickable"
+              onClick={() => navigate(`/ambassador/${toSlug(creator.name)}/analytics`)}
+            >
               <td>
                 <div className="creator-table__name-cell">
                   <div
