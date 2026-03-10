@@ -31,3 +31,9 @@
   flex-direction: column;
   gap: 24px;
 }
+
+/* Ambassador page uses a 2-column layout (no side nav) */
+.ambassador-layout .icon-sidebar-area {
+  grid-row: 1 / -1;
+  grid-column: 1;
+}
